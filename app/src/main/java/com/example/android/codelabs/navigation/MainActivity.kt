@@ -29,6 +29,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.onNavDestinationSelected
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 /**
@@ -80,10 +82,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNavMenu(navController: NavController) {
-        // TODO STEP 9.3 - Use NavigationUI to set up Bottom Nav
-//        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
-//        bottomNav?.setupWithNavController(navController)
-        // TODO END STEP 9.3
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        bottomNav?. setupWithNavController(navController)
     }
 
     private fun setupNavigationMenu(navController: NavController) {
@@ -122,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         /** Have the NavigationUI look for an action or destination matching the menu item id
          * and navigate there if found. That means id set for menu item in XML layout and id set
          * for destination/action in navigation graph must be same. (@+id/settings_dest in this case).
-         * Otherwise, bubble up to the parent.
+         * If the menu item is not meant to navigate, handle with super.onOptionsItemSelected.
          */
         return item.onNavDestinationSelected(findNavController(R.id.my_nav_host_fragment))
                 || super.onOptionsItemSelected(item)
