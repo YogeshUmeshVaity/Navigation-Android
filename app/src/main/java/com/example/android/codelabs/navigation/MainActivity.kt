@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBar(navController, appBarConfiguration)
 
-        setupNavigationMenu(navController)
+        setupSideNavigationMenu(navController)
 
         setupBottomNavMenu(navController)
 
@@ -86,13 +86,9 @@ class MainActivity : AppCompatActivity() {
         bottomNav?. setupWithNavController(navController)
     }
 
-    private fun setupNavigationMenu(navController: NavController) {
-        // TODO STEP 9.4 - Use NavigationUI to set up a Navigation View
-//        // In split screen mode, you can drag this view out from the left
-//        // This does NOT modify the actionbar
-//        val sideNavView = findViewById<NavigationView>(R.id.nav_view)
-//        sideNavView?.setupWithNavController(navController)
-        // TODO END STEP 9.4
+    private fun setupSideNavigationMenu(navController: NavController) {
+        val sideNavView = findViewById<NavigationView>(R.id.nav_view)
+        sideNavView?.setupWithNavController(navController)
     }
 
     private fun setupActionBar(navController: NavController,
