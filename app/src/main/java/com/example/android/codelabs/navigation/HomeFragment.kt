@@ -50,6 +50,11 @@ class HomeFragment : Fragment() {
         actionButton?.setOnClickListener {
             findNavController().navigate(R.id. next_action)
         }
+
+        val shoppingButton = view.findViewById<Button>(R.id.shopping_cart)
+        shoppingButton?.setOnClickListener {
+            findNavController().navigate(R.id.shopping_cart)
+        }
     }
 
     private fun createNavOptions(): NavOptions {

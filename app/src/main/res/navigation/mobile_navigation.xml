@@ -75,6 +75,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/shopping_cart"
+        android:name="com.example.android.codelabs.navigation.ShoppingFragment"
+        android:label="@string/shopping"
+        tools:layout="@layout/fragment_shopping"/>
+
+    <fragment
         android:id="@+id/settings_dest"
         android:name="com.example.android.codelabs.navigation.SettingsFragment"
         android:label="@string/settings"
